@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public FixedJoystick joystick;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +13,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        float horizontal = joystick.Horizontal;
+        float vertical = joystick.Vertical;
+        
+        transform.Translate(horizontal * speed, vertical * speed, 0.0f);
         
     }
 }
