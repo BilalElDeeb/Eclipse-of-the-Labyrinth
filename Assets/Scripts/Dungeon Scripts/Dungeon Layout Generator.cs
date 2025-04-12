@@ -7,15 +7,14 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 //NumberOfRooms = 3.33 × FloorDepth + 5-6 (maximum of 20)
-public class DungeonGenerator : MonoBehaviour
+public class DungeonLayoutGenerator : MonoBehaviour
 {
     public int dungeonDifficulty;
     public int dungeonDepth;
-
     private int numberOfRooms;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         numberOfRooms = (int)Math.Ceiling(((3.33*dungeonDepth) + (3.33*dungeonDifficulty)) + Random.Range(3,9));
     }
@@ -36,13 +35,14 @@ public class DungeonGenerator : MonoBehaviour
 
         while (roomPositions.Count < numberOfRooms)
         {
-            int i =Random.Range(0, possibleRoomPositions.Count);
-            roomPositions.Add(possibleRoomPositions[i]);
+            int i =Random.Range(0, (possibleRoomPositions.Count - 1));
+            Vector2Int roomToAdd = possibleRoomPositions[i]; 
+            roomPositions.Add(roomToAdd);
             
-            Vector2Int UpRoomPosition = possibleRoomPositions[i] + Vector2Int.up;
-            Vector2Int DownRoomPosition = possibleRoomPositions[i] + Vector2Int.down;
-            Vector2Int LeftRoomPosition = possibleRoomPositions[i] + Vector2Int.left;
-            Vector2Int RightRoomPosition = possibleRoomPositions[i] + Vector2Int.right;
+            Vector2Int UpRoomPosition = roomToAdd + Vector2Int.up;
+            Vector2Int DownRoomPosition = roomToAdd + Vector2Int.down;
+            Vector2Int LeftRoomPosition = roomToAdd + Vector2Int.left;
+            Vector2Int RightRoomPosition = roomToAdd + Vector2Int.right;
             
             possiblePositions.Add(UpRoomPosition);
             possiblePositions.Add(DownRoomPosition);
@@ -51,20 +51,20 @@ public class DungeonGenerator : MonoBehaviour
 
             foreach (Vector2Int roomPosition in possiblePositions)
             {
-                if (!roomPositions.Contains(roomPosition))
+                if (!roomPositions.Contains(roomPosition) && !possibleRoomPositions.Contains(roomPosition))
                 {
-                    roomPositions.Add(roomPosition);
+                    possibleRoomPositions.Add(roomPosition);
                 }
             }
             possiblePositions.Clear();
             
-            possibleRoomPositions.RemoveAt(i);
+            possibleRoomPositions.Remove(roomToAdd);
         }
 
         return roomPositions;
     }
     
-    List<Room> CreateDungeonLayout()
+    public List<Room> CreateDungeonLayout()
     {
         List<Room> rooms = new List<Room>();
         List<Vector2Int> roomPositions = CreateRoomPositions();
@@ -74,7 +74,8 @@ public class DungeonGenerator : MonoBehaviour
             position = roomPositions[0],
             doorPositions = 0
         });
-        for (int i = 1; i < numberOfRooms; i++)
+        
+        for (int i = 1; i < roomPositions.Count; i++)
         {
             Room newRoom = new Room()
             {
@@ -102,7 +103,7 @@ public class DungeonGenerator : MonoBehaviour
                 newRoom.doorPositions |= DoorPositions.South;
                 adjacentRoom.doorPositions |= DoorPositions.North;
             }
-            
+           
             rooms.Add(newRoom);
         }
         return rooms;
@@ -112,7 +113,7 @@ public class DungeonGenerator : MonoBehaviour
     {
         rooms = rooms.OrderBy(room => Random.value).ToList();
         
-        return rooms.First(room => (room.position - roomToCheck.position).magnitude == 1);
+        return rooms.FirstOrDefault(room => (room.position - roomToCheck.position).magnitude == 1);
     }
 }
 

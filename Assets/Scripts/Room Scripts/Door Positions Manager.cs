@@ -28,7 +28,7 @@ public class DoorPositionsManager : MonoBehaviour
             }
         }
         
-        if (doorPositions.hasFlag(DoorPositions.North))
+        if (doorPositions.hasFlag(DoorPositions.South))
         {
             for (int i = (roomWidth/2) - halfDoorSize; i < (roomWidth/2) + halfDoorSize; i++)
             {
@@ -63,10 +63,15 @@ public class DoorPositionsManager : MonoBehaviour
             floorTilemap.SetTile(new Vector3Int(doorPosition.x ,doorPosition.y,0), floorTile);
         }
     }
+
+    public void CreateDoorPositions(DoorPositions doorPositions)
+    {
+        SetDoorPositions(FetchDoorPostions(doorPositions));
+    }
     // Start is called before the first frame update
     void Start() 
     {
-        SetDoorPositions(FetchDoorPostions(doorPositions));
+        
     }
 
     // Update is called once per frame
