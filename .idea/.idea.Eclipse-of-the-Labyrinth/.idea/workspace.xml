@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room Scripts/Door Positions Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room Scripts/Door Positions Manager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <updated>1744462124396</updated>
       <workItem from="1744462131075" duration="26000" />
       <workItem from="1744462177014" duration="4971000" />
-      <workItem from="1744467572777" duration="971000" />
+      <workItem from="1744467572777" duration="2414000" />
     </task>
     <servers />
   </component>

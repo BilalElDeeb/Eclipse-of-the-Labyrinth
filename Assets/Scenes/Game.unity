@@ -1450,6 +1450,7 @@ MonoBehaviour:
   floorTilemap: {fileID: 1726028280}
   wallTile: {fileID: 11400000, guid: 13be62fe79a042f4d9c7afeb9c77f597, type: 2}
   floorTile: {fileID: 11400000, guid: 9d3a0dc7903d615428ddab73820c27db, type: 2}
+  doorSize: 4
   roomHeight: 10
   roomWidth: 22
   doorPositions: -1
