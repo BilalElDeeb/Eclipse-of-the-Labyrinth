@@ -10,12 +10,9 @@ public class DoorPositionsManager : MonoBehaviour
     public Tilemap floorTilemap;
     public TileBase wallTile;
     public TileBase floorTile;
-    public int doorSize;
-    public int roomHeight;
-    public int roomWidth;
     public DoorPositions doorPositions;
 
-    List<Vector2Int> FetchDoorPostions(DoorPositions doorPositions)
+    List<Vector2Int> FetchDoorPostions(DoorPositions doorPositions, int doorSize, int roomHeight, int roomWidth)
     {
         List<Vector2Int> doorPositionsList = new List<Vector2Int>();
         int halfDoorSize = doorSize / 2;
@@ -28,7 +25,7 @@ public class DoorPositionsManager : MonoBehaviour
             }
         }
         
-        if (doorPositions.hasFlag(DoorPositions.North))
+        if (doorPositions.hasFlag(DoorPositions.South))
         {
             for (int i = (roomWidth/2) - halfDoorSize; i < (roomWidth/2) + halfDoorSize; i++)
             {
@@ -63,10 +60,15 @@ public class DoorPositionsManager : MonoBehaviour
             floorTilemap.SetTile(new Vector3Int(doorPosition.x ,doorPosition.y,0), floorTile);
         }
     }
+
+    public void CreateDoorPositions(DoorPositions doorPositions, int doorSize, int roomHeight, int roomWidth)
+    {
+        SetDoorPositions(FetchDoorPostions(doorPositions, doorSize, roomHeight , roomWidth));
+    }
     // Start is called before the first frame update
     void Start() 
     {
-        SetDoorPositions(FetchDoorPostions(doorPositions));
+        
     }
 
     // Update is called once per frame
