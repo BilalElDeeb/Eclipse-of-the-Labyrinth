@@ -801,6 +801,7 @@ MonoBehaviour:
   - {fileID: 2278613039212214117, guid: 464a39e9e7a90d4488c2f23720d8a49c, type: 3}
   - {fileID: 3738042096355563258, guid: 947c1bc7974b57947a0c7f9559db6ee6, type: 3}
   bossRoom: {fileID: 734283682832159186, guid: a29bc5a41be8781438fa509f4ee4cfac, type: 3}
+  doorSize: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
