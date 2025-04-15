@@ -194,4 +194,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerBullet: 1
-  bulletItem: {fileID: 0}
+  bulletItem: {fileID: 11400000, guid: b937caef999107644b6a3301f30fd1e5, type: 2}
+  BulletRigidbody: {fileID: 4692229388970473140}

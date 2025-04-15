@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class  BulletMovementBehaviourSO : ScriptableObject
 {
-    public abstract void BulletMove();
+    public abstract void BulletMove(BulletController bulletController, Vector3 direction);
 }
