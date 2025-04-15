@@ -148,7 +148,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -195,4 +195,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerBullet: 1
   bulletItem: {fileID: 11400000, guid: b937caef999107644b6a3301f30fd1e5, type: 2}
-  BulletRigidbody: {fileID: 4692229388970473140}
+  bulletRigidbody: {fileID: 4692229388970473140}
+  bulletSpriteRenderer: {fileID: 3336370732939498288}

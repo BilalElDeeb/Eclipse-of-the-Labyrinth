@@ -8,6 +8,6 @@ public class StraightBulletMovementBehaviour : BulletMovementBehaviourSO
 {
     public override void BulletMove(BulletController bulletController, Vector3 direction)
     {
-        bulletController.BulletRigidbody.velocity = bulletController.bulletItem.speed * direction;
+        bulletController.bulletRigidbody.velocity = bulletController.bulletItem.speed * direction;
     }
 }
