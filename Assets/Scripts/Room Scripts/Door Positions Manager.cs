@@ -10,11 +10,9 @@ public class DoorPositionsManager : MonoBehaviour
     public Tilemap floorTilemap;
     public TileBase wallTile;
     public TileBase floorTile;
-    public int roomHeight;
-    public int roomWidth;
     public DoorPositions doorPositions;
 
-    List<Vector2Int> FetchDoorPostions(DoorPositions doorPositions, int doorSize)
+    List<Vector2Int> FetchDoorPostions(DoorPositions doorPositions, int doorSize, int roomHeight, int roomWidth)
     {
         List<Vector2Int> doorPositionsList = new List<Vector2Int>();
         int halfDoorSize = doorSize / 2;
@@ -63,9 +61,9 @@ public class DoorPositionsManager : MonoBehaviour
         }
     }
 
-    public void CreateDoorPositions(DoorPositions doorPositions, int doorSize)
+    public void CreateDoorPositions(DoorPositions doorPositions, int doorSize, int roomHeight, int roomWidth)
     {
-        SetDoorPositions(FetchDoorPostions(doorPositions, doorSize));
+        SetDoorPositions(FetchDoorPostions(doorPositions, doorSize, roomHeight , roomWidth));
     }
     // Start is called before the first frame update
     void Start() 

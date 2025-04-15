@@ -12,6 +12,8 @@ public class DungeonGenerator : MonoBehaviour
     public List<GameObject> roomVariants;
     public GameObject bossRoom;
     public int doorSize;
+    public int roomHeight;
+    public int roomWidth;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,9 +46,9 @@ public class DungeonGenerator : MonoBehaviour
         int sortingOrderOffset = -100;
     
         
-        GameObject room = Instantiate(roomVariant,new Vector3((newRoom.position.x * 22), 
-            (newRoom.position.y * 10), 0), Quaternion.identity);
-        room.GetComponent<DoorPositionsManager>().CreateDoorPositions(newRoom.doorPositions, doorSize);
+        GameObject room = Instantiate(roomVariant,new Vector3((newRoom.position.x * roomWidth), 
+            (newRoom.position.y * roomHeight), 0), Quaternion.identity);
+        room.GetComponent<DoorPositionsManager>().CreateDoorPositions(newRoom.doorPositions, doorSize, roomHeight, roomWidth);
 
         List<TilemapRenderer> TilemapRenderer = room.GetComponentsInChildren<TilemapRenderer>().ToList();
 
