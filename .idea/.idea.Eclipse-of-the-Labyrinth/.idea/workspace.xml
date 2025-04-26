@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="" />
+    <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +22,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet Scripts/Bullet Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy Scripts/Humaniod Enemy AI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Bullets/Behaviours/Impact Behaviours/Bullet Impact Behaviour SO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Bullets/Behaviours/Movement Behaviours/Straight Bullet Movement Behaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -35,7 +40,7 @@
     "Attach to Unity Editor.Attach to Unity Editor & Play.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bulletSystem",
+    "git-widget-placeholder": "enemySystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +107,7 @@
       <workItem from="1744467572777" duration="8686000" />
       <workItem from="1744476931989" duration="8321000" />
       <workItem from="1744739580663" duration="5502000" />
+      <workItem from="1745698262581" duration="1529000" />
     </task>
     <servers />
   </component>
