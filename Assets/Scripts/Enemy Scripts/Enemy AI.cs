@@ -8,13 +8,13 @@ public class EnemyAI : MonoBehaviour
 {
     protected Animator animator;
     protected GameObject player;
-    protected Rigidbody2D enemyRigidbody;
+    public Rigidbody2D enemyRigidbody;
     public float maxHealth;
     protected float currentHealth;
     public float speed;
     public Transform bulletSpawnLocation;
 
-    void Start()
+    protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRigidbody = GetComponent<Rigidbody2D>();

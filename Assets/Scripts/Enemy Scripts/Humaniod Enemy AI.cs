@@ -21,8 +21,9 @@ public class HumaniodEnemyAI : EnemyAI
     
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         SetAnimations();
         attackCoolDown = fireRate;
     }
@@ -34,6 +35,7 @@ public class HumaniodEnemyAI : EnemyAI
         {
             animator.SetFloat("Speed", Vector3.Distance(transform.position, lastPosition) / Time.fixedDeltaTime);
         }
+        lastPosition = transform.position;
         attackCoolDown = attackCoolDown - Time.fixedDeltaTime;
         
         enemyMovementBehaviour.EnemyMove(this, player.transform.position);
@@ -42,9 +44,20 @@ public class HumaniodEnemyAI : EnemyAI
 
         if (attackCoolDown <= 0)
         {
-            enemyAttackBehaviour.EnemyAttack(bulletItem, (player.transform.position - transform.position), bulletSpawnLocation.position, false, bulletPrefab);
+            enemyAttackBehaviour.EnemyAttack(bulletItem, (player.transform.position - transform.position).normalized, bulletSpawnLocation.position, false, bulletPrefab);
             attackCoolDown = fireRate;
             animator.SetTrigger("Attack");
+        }
+        
+        Vector3 Direction = (player.transform.position - transform.position).normalized;
+
+        if (Direction.x >= 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
         }
         
     }
@@ -52,6 +65,8 @@ public class HumaniodEnemyAI : EnemyAI
     void SetAnimations()
     {
         AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        
+        Debug.Log("HAI");
         
         animatorOverrideController ["Idle Placeholder"] = idleAnimationClip;
         animatorOverrideController ["Walking Placeholder"] = walkingAnimationClip;
