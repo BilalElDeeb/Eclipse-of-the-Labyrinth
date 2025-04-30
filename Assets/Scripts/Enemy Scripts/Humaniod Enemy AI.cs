@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,17 +25,20 @@ public class HumaniodEnemyAI : EnemyAI
     protected override void Start()
     {
         base.Start();
+        lastPosition = transform.position;
         SetAnimations();
         attackCoolDown = fireRate;
+    }
+
+    private void LateUpdate()
+    {
+        animator.SetFloat("Speed", Vector3.Distance(transform.position, lastPosition) / Time.fixedDeltaTime);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (lastPosition != null)
-        {
-            animator.SetFloat("Speed", Vector3.Distance(transform.position, lastPosition) / Time.fixedDeltaTime);
-        }
+
         lastPosition = transform.position;
         attackCoolDown = attackCoolDown - Time.fixedDeltaTime;
         
