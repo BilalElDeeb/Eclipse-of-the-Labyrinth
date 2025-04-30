@@ -14,7 +14,6 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initializeBullet(bulletItem, Vector3.right);
     }
 
     // Update is called once per frame
@@ -23,15 +22,25 @@ public class BulletController : MonoBehaviour
         bulletItem.bulletMovementBehaviour.BulletMove(this, this.bulletDirection);
     }
 
-    public void initializeBullet(BulletItem bulletItem, Vector3 bulletDirection)
+    public void initializeBullet(BulletItem bulletItem, Vector3 bulletDirection, bool playerBullet)
     {
         this.bulletItem = bulletItem;
         bulletSpriteRenderer.sprite = bulletItem.itemImage;
         this.bulletDirection = bulletDirection;
+        this.PlayerBullet = playerBullet;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (PlayerBullet && collider.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
+        if (!PlayerBullet && collider.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
         bulletItem.bulletImpactBehaviour.BulletOnImpact(this, collider);
     }
 }
