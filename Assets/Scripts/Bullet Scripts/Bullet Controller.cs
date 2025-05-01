@@ -45,6 +45,11 @@ public class BulletController : MonoBehaviour
         {
             return;
         }
+
+        if (collider.tag == "Spawn Controller")
+        {
+            return;
+        }
         bulletItem.bulletImpactBehaviour.BulletOnImpact(this, collider);
     }
 }

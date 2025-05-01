@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bullet
+  - Spawn Controller
   layers:
   - Default
   - TransparentFX
