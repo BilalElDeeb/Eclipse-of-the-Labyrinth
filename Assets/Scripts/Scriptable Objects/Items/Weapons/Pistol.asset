@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df90706ed40768b48929c219297b89f5, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  itemName: Pistol
+  itemDescription: Shooty Shooty
+  itemImage: {fileID: -1721448698, guid: b631ed305dfd43c488e0f8edf5c829bc, type: 3}
+  itemScale: 1
+  weaponAttackBehaviour: {fileID: 11400000, guid: 05ba45bf4155e604090ae2af2966b2d7, type: 2}
+  bulletItem: {fileID: 11400000, guid: b937caef999107644b6a3301f30fd1e5, type: 2}
+  autoFire: 1
+  fireRate: 2
+  maxMagazineSize: 5
+  reloadTime: 3
