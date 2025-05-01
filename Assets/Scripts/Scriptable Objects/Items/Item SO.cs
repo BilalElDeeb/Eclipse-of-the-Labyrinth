@@ -10,4 +10,9 @@ public class ItemSO : ScriptableObject
     public string itemDescription;
     public Sprite itemImage;
     public float itemScale = 1;
+    
+    public virtual void useItem()
+    {
+    
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HumaniodEnemyAI : EnemyAI
 {
-    public EnemyAttackBehaviourSO enemyAttackBehaviour;
+    public AttackBehaviourSO enemyAttackBehaviour;
     public EnemyMovementBehaviourSO enemyMovementBehaviour;
     public GameObject bulletPrefab;
     public BulletItem bulletItem;
@@ -48,7 +48,7 @@ public class HumaniodEnemyAI : EnemyAI
 
         if (attackCoolDown <= 0)
         {
-            enemyAttackBehaviour.EnemyAttack(bulletItem, (player.transform.position - transform.position).normalized, bulletSpawnLocation.position, false, bulletPrefab);
+            enemyAttackBehaviour.Attack(bulletItem, (player.transform.position - transform.position).normalized, bulletSpawnLocation.position, false, bulletPrefab);
             attackCoolDown = fireRate;
             animator.SetTrigger("Attack");
         }

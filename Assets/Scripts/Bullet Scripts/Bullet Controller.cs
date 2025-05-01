@@ -28,6 +28,10 @@ public class BulletController : MonoBehaviour
         bulletSpriteRenderer.sprite = bulletItem.itemImage;
         this.bulletDirection = bulletDirection;
         this.PlayerBullet = playerBullet;
+        
+        float angle = Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg;
+        
+        bulletSpriteRenderer.gameObject.transform.rotation = Quaternion.Euler(0,0,angle);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

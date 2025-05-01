@@ -14,6 +14,15 @@ public class Inventory : MonoBehaviour
     public List<InventorySlot> inventory = new List<InventorySlot>();
     public int inventorySize = 20;
 
+
+    private void Start()
+    {
+        if (OnInventoryChangedCallback != null)
+        {
+            OnInventoryChangedCallback();
+        }
+    }
+
     public bool AddItem(InventorySlot inventorySlot)
     {
         try
@@ -66,9 +75,12 @@ public class Inventory : MonoBehaviour
                     }
                     else
                     {
-                        InventorySlot newInventorySlot = inventorySlot;
-                        newInventorySlot.amount -= inventory[i].amount;
-                        inventory[i] = newInventorySlot;
+                        inventory[i] = new InventorySlot
+                        {
+                            item = inventory[i].item,
+                            amount = inventory[i].amount - inventorySlot.amount
+                        };
+
                     }
 
                     return;

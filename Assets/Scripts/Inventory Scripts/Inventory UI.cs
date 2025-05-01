@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventorySlotsParent;
     List<InventorySlotUI> uiSlots = new List<InventorySlotUI>();
 
-    void Start()
+    void Awake()
     {
         uiSlots = inventorySlotsParent.GetComponentsInChildren<InventorySlotUI>().ToList();
 
