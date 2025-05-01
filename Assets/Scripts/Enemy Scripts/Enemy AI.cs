@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     protected GameObject player;
     public Rigidbody2D enemyRigidbody;
     public float maxHealth;
-    protected float currentHealth;
+    [SerializeField] protected float currentHealth;
     public float speed;
     public Transform bulletSpawnLocation;
 
@@ -40,5 +40,10 @@ public class EnemyAI : MonoBehaviour
     {
         currentHealth += heal;
         animator.SetFloat("Health", currentHealth);
+    }
+
+    public void death()
+    {
+        Destroy(gameObject);
     }
 }
