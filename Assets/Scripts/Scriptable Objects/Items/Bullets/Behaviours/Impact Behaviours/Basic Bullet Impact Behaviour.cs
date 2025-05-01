@@ -9,7 +9,14 @@ public class BasicBulletImpactBehaviour : BulletImpactBehaviourSO
 {
     public override void BulletOnImpact(BulletController bulletController, Collider2D bulletTarget)
     {
-            // Deal damage to the hp of the target based on the bulletController.bulletItem.damage
-            Destroy(bulletController.gameObject);
+        if (!bulletController.PlayerBullet && bulletTarget.tag == "Player")
+        {
+            bulletTarget.GetComponent<PlayerHealth>().takeDamage(bulletController.bulletItem.damage);
+        }
+        else if (bulletController.PlayerBullet && bulletTarget.tag == "Enemy")
+        {
+            bulletTarget.GetComponent<EnemyAI>().takeDamage(bulletController.bulletItem.damage);
+        }
+        Destroy(bulletController.gameObject);
     }
 }

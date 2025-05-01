@@ -17,6 +17,6 @@ MonoBehaviour:
   itemImage: {fileID: -1752388792, guid: b631ed305dfd43c488e0f8edf5c829bc, type: 3}
   itemScale: 1
   speed: 5
-  damage: 1
+  damage: 5
   bulletMovementBehaviour: {fileID: 11400000, guid: b3e4ce0a88ac66d4f88bbea760dc1284, type: 2}
   bulletImpactBehaviour: {fileID: 11400000, guid: 3fff438a90b2c884c904cb8693bd43c9, type: 2}

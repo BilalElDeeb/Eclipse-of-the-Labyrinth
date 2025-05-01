@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 37661515}
   - component: {fileID: 37661518}
   - component: {fileID: 37661519}
+  - component: {fileID: 37661520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -331,6 +332,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventorySize: 15
+--- !u!114 &37661520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37661511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f285bc392f3ea124e8eb61f399f7899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  animator: {fileID: 85036012}
 --- !u!1001 &61787132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2304,7 +2320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2694080812667187255, guid: 3cb7bd811c521da47ba471aa4090fb93, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2710151593536107935, guid: 3cb7bd811c521da47ba471aa4090fb93, type: 3}
       propertyPath: speed
@@ -5373,7 +5389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919889135742854598, guid: fc09870e31a045c40ad2361adaee22e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6083118694015115786, guid: fc09870e31a045c40ad2361adaee22e8, type: 3}
       propertyPath: m_LocalPosition.x

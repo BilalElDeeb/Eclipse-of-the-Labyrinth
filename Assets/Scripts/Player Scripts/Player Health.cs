@@ -6,22 +6,23 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100;
-    private float currentHealth;
+    [SerializeField] protected float currentHealth;
     public Animator animator;
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
+        animator.SetFloat("Health", currentHealth);
     }
 
-    void takeDamage(float damage)
+    public void takeDamage(float damage)
     {
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
         animator.SetFloat("Health", currentHealth);
     }
 
-    void heal(float heal)
+    public void heal(float heal)
     {
         currentHealth += heal;
         animator.SetFloat("Health", currentHealth);
