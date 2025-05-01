@@ -66,9 +66,12 @@ public class Inventory : MonoBehaviour
                     }
                     else
                     {
-                        InventorySlot newInventorySlot = inventorySlot;
-                        newInventorySlot.amount -= inventory[i].amount;
-                        inventory[i] = newInventorySlot;
+                        inventory[i] = new InventorySlot
+                        {
+                            item = inventory[i].item,
+                            amount = inventory[i].amount - inventorySlot.amount
+                        };
+
                     }
 
                     return;
