@@ -28,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-     
-        
         transform.Translate(movement.x, movement.y, 0.0f);
         if (movement == Vector2.zero)
         {
