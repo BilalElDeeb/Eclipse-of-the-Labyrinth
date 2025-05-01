@@ -27,7 +27,7 @@ public class WeaponController : MonoBehaviour
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.position.x > 350 && touch.position.y > 350)
+            if (touch.position.x > 750 || touch.position.y > 750)
             {
                 return touch;
             }
@@ -37,7 +37,9 @@ public class WeaponController : MonoBehaviour
 
     void fireBullet(Touch validTouch)
     {
-        weapon.weaponAttackBehaviour.Attack(weapon.bulletItem, (new Vector3(validTouch.position.x, validTouch.position.y, 0) - transform.position).normalized, transform.position, true, bulletPrefab);
+        Vector3 touchPosition = Camera.main.ScreenToWorldPoint(validTouch.position);
+        touchPosition.z = 0;
+        weapon.weaponAttackBehaviour.Attack(weapon.bulletItem, (touchPosition - transform.position).normalized, transform.position, true, bulletPrefab);
         currentMagazine -= 1;
     }
 
