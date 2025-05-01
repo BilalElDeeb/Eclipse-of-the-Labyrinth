@@ -17,6 +17,8 @@ public class DungeonLayoutGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        networkManager = NetworkManager.Instance;
+        dungeonDifficulty = networkManager.currentDungeonDifficulty;
         numberOfRooms = (int)Math.Ceiling(((3.33*dungeonDepth) + (3.33*dungeonDifficulty)) + Random.Range(3,9));
     }
 

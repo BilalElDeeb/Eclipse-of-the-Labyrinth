@@ -14,6 +14,17 @@ public class Inventory : MonoBehaviour
     public List<InventorySlot> inventory = new List<InventorySlot>();
     public int inventorySize = 20;
 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogError("More than one Inventory singleton");
+        }
+    }
 
     private void Start()
     {
@@ -111,15 +122,4 @@ public class Inventory : MonoBehaviour
         return 0;
     }
 
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Debug.LogError("More than one Inventory singleton");
-        }
-    }
 }

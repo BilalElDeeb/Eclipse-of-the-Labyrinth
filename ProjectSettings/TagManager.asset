@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Bullet
   - Spawn Controller
+  - Boss Room
   layers:
   - Default
   - TransparentFX
