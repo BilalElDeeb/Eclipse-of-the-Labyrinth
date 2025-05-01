@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WeaponController : MonoBehaviour
     public float reloadCooldown;
     public float attackCooldown;
     public GameObject bulletPrefab;
+    public Slider reloadSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +68,27 @@ public class WeaponController : MonoBehaviour
     {
         if (Inventory.instance.CountItem(weapon.bulletItem) > 0)
         {
+            StartCoroutine(reloadUI());
             isReloading = true;
             reloadCooldown = weapon.reloadTime;
         }
+    }
+
+    IEnumerator reloadUI()
+    {
+        float numberOfIterations = weapon.reloadTime/0.1f;
+
+        reloadSlider.gameObject.SetActive(true);
+        
+        for (int i = 0; i < numberOfIterations; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            reloadSlider.value = (i*0.1f)/weapon.reloadTime;
+            
+        }
+        reloadSlider.gameObject.SetActive(false);
+        
+        reloadSlider.value = 0;
     }
 
     // Update is called once per frame
