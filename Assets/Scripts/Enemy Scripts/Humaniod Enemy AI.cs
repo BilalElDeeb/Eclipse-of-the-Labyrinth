@@ -70,8 +70,6 @@ public class HumaniodEnemyAI : EnemyAI
     {
         AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         
-        Debug.Log("HAI");
-        
         animatorOverrideController ["Idle Placeholder"] = idleAnimationClip;
         animatorOverrideController ["Walking Placeholder"] = walkingAnimationClip;
         animatorOverrideController ["Running Placeholder"] = runningAnimationClip;
