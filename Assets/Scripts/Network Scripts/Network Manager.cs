@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviour
 {
+    public GameObject accountMenu;
+    public GameObject myaccountMenu;
+    public GameObject signupMenu;
+    public GameObject signinMenu;
+    public GameObject mainMenu;
     private static NetworkManager _instance;
     private string serverUrl = "http://localhost:5000";
     public string currentUsername;
@@ -26,15 +31,30 @@ public class NetworkManager : MonoBehaviour
         }
     }
 
-    public TMP_InputField usernameInput;
-    public TMP_InputField passwordInput;
-    public TMP_Text resultText;
+    public TMP_InputField SignUpUsernameInput;
+    public TMP_InputField SignUpPasswordInput;
+    public TMP_Text SignUpResultText;
+    public TMP_InputField SignInUsernameInput;
+    public TMP_InputField SignInPasswordInput;
+    public TMP_Text SignInResultText;
+    public TMP_Text DeleteResultText;
 
+    public void clearText()
+    {
+        SignUpUsernameInput.text = "";
+        SignUpPasswordInput.text = "";
+        SignUpResultText.text = "";
+        SignInUsernameInput.text = "";
+        SignInPasswordInput.text = "";
+        SignInResultText.text = "";
+        DeleteResultText.text = "";
+    }
+    
     // ========== Sign Up ==========
     public void RegisterUser()
     {
-        string username = usernameInput.text;
-        string password = passwordInput.text;
+        string username = SignUpUsernameInput.text;
+        string password = SignUpPasswordInput.text;
         StartCoroutine(SignUp(username, password));
     }
 
@@ -54,11 +74,15 @@ public class NetworkManager : MonoBehaviour
             {
                 currentUsername = username;
                 currentDungeonDifficulty = 1;
-                resultText.text = "Signup successful";
+                SignUpResultText.text = "Signup successful";
+                yield return new WaitForSeconds(1);
+                mainMenu.SetActive(true);
+                signupMenu.SetActive(false);
+                clearText();
             }
             else
             {
-                resultText.text = "Signup failed: " + request.downloadHandler.text;
+                SignUpResultText.text = "Signup failed: " + request.downloadHandler.text;
             }
         }
     }
@@ -66,8 +90,8 @@ public class NetworkManager : MonoBehaviour
     // ========== Login ==========
     public void LoginUser()
     {
-        string username = usernameInput.text;
-        string password = passwordInput.text;
+        string username = SignInUsernameInput.text;
+        string password = SignInPasswordInput.text;
         StartCoroutine(Login(username, password));
     }
 
@@ -86,11 +110,15 @@ public class NetworkManager : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 currentUsername = username;
-                resultText.text = "Login successful";
+                SignInResultText.text = "Login successful";
+                yield return new WaitForSeconds(1);
+                mainMenu.SetActive(true);
+                signinMenu.SetActive(false);
+                clearText();
             }
             else
             {
-                resultText.text = "Login failed: " + request.downloadHandler.text;
+                SignInResultText.text = "Login failed: " + request.downloadHandler.text;
             }
         }
     }
@@ -133,12 +161,14 @@ public class NetworkManager : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                resultText.text = "User deleted";
+                DeleteResultText.text = "User deleted";
+                yield return new WaitForSeconds(1);
                 Logout();
+                clearText();
             }
             else
             {
-                resultText.text = "Delete failed: " + request.downloadHandler.text;
+                DeleteResultText.text = "Delete failed: " + request.downloadHandler.text;
             }
         }
     }
@@ -149,5 +179,7 @@ public class NetworkManager : MonoBehaviour
         currentUsername = null;
         currentDungeonDifficulty = 0;
         Debug.Log("User logged out");
+        myaccountMenu.SetActive(false);
+        accountMenu.SetActive(true);
     }
 }
