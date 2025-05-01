@@ -49,4 +49,12 @@ public class InventorySlotUI : MonoBehaviour
             amount = this.amount
         });
     }
+
+    public void useItem()
+    {
+        if (item != null)
+        {
+            item.useItem();
+        }
+    }
 }

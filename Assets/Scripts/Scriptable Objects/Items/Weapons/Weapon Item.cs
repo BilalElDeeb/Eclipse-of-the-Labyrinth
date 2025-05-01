@@ -12,4 +12,9 @@ public class WeaponItem : ItemSO
     public float fireRate;
     public int maxMagazineSize;
     public float reloadTime;
+    
+    public override void useItem()
+    {
+        
+    }
 }
