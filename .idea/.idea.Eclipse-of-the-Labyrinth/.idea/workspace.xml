@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy Scripts/Enemy AI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy Scripts/Enemy AI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Enemies/Humaniod Base Animations/Humaniod Animation Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Enemies/Humaniod Base Animations/Humaniod Animation Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Player/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Player/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Downloaded Content/TextMesh Pro/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Downloaded Content/TextMesh Pro/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Item Pickup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu Scripts/Pause Menu Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/Game Over.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/Trigger Game Over.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Enemies/Movement Behaviour/Chase Enemy Movement Behaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Enemies/Movement Behaviour/Enemy Movement Behaviour SO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Bullets/Behaviours/Impact Behaviours/Bullet Impact Behaviour SO.cs" root0="FORCE_HIGHLIGHTING" />
