@@ -12,6 +12,7 @@ public class DungeonLayoutGenerator : MonoBehaviour
     public int dungeonDifficulty;
     public int dungeonDepth;
     private int numberOfRooms;
+    NetworkManager networkManager;
     
     // Start is called before the first frame update
     void Awake()
