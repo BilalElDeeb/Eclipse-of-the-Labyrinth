@@ -11,6 +11,8 @@ public class InventorySlotUI : MonoBehaviour
     public TMP_Text itemamount;
     public Button closeButton;
     public Button itemButton;
+    public ItemSO item;
+    public int amount;
     
     public void SetItem(ItemSO item, int amount)
     {
@@ -21,6 +23,9 @@ public class InventorySlotUI : MonoBehaviour
         
         closeButton.interactable = true;
         itemButton.interactable = true;
+        
+        this.item = item;
+        this.amount = amount;
     }
 
     public void ClearItem()
@@ -32,5 +37,16 @@ public class InventorySlotUI : MonoBehaviour
         
         closeButton.interactable = false;
         itemButton.interactable = false;
+        this.item = null;
+        this.amount = 0;
+    }
+
+    public void removeItem()
+    {
+        Inventory.instance.RemoveItem(new InventorySlot
+        {
+            item = this.item,
+            amount = this.amount
+        });
     }
 }

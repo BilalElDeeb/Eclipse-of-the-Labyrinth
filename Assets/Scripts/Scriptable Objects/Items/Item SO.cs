@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Item", menuName = "Eclipse of the Labyrinth/Items/Item")]
+
 public class ItemSO : ScriptableObject
 {
     public string itemName;
