@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory Slot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +24,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet Scripts/Bullet Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy Scripts/Humaniod Enemy AI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Main Menu Scripts/Main Menu Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Item Pickup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Enemies/Movement Behaviour/Chase Enemy Movement Behaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Enemies/Movement Behaviour/Enemy Movement Behaviour SO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Bullets/Behaviours/Impact Behaviours/Bullet Impact Behaviour SO.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,7 +114,7 @@
       <workItem from="1745698262581" duration="13554000" />
       <workItem from="1745754958076" duration="5077000" />
       <workItem from="1746006575152" duration="2877000" />
-      <workItem from="1746055004311" duration="5072000" />
+      <workItem from="1746055004311" duration="6173000" />
     </task>
     <servers />
   </component>

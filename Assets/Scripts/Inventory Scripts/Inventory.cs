@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory instance;
     public delegate void OnInventoryChanged();
     
     public OnInventoryChanged OnInventoryChangedCallback;
@@ -12,7 +14,7 @@ public class Inventory : MonoBehaviour
     public List<InventorySlot> inventory = new List<InventorySlot>();
     public int inventorySize = 15;
 
-    public void AddItem(InventorySlot inventorySlot)
+    public bool AddItem(InventorySlot inventorySlot)
     {
         try
         {
@@ -23,17 +25,18 @@ public class Inventory : MonoBehaviour
                     InventorySlot newInventorySlot = inventorySlot;
                     newInventorySlot.amount += inventory[i].amount;
                     inventory[i] = newInventorySlot;
-                    return;
+                    return true;
                 }
             }
 
             if (inventory.Count >= inventorySize)
             {
                 Debug.Log("Inventory is full");
-                return;
+                return false;
             }
 
             inventory.Add(inventorySlot);
+            return true;
         }
         finally
         {
@@ -94,5 +97,17 @@ public class Inventory : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogError("More than one Inventory singleton");
+        }
     }
 }
