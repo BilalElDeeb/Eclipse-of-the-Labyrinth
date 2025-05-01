@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
@@ -11,7 +12,12 @@ public class WeaponController : MonoBehaviour
     public float reloadCooldown;
     public float attackCooldown;
     public GameObject bulletPrefab;
-    
+
+    private void Awake()
+    {
+        initialize(weapon);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,13 @@ public class WeaponController : MonoBehaviour
             item = weapon.bulletItem,
             amount = currentMagazine
         });
+    }
+    
+    void initialize(WeaponItem weaponItem)
+    {
+        this.weapon = weaponItem;
+        this.GetComponent<SpriteRenderer>().sprite = weapon.itemImage;
+        this.transform.localScale = new Vector3(weapon.itemScale, weapon.itemScale, 1);
     }
 
     Touch? getValidTouch()

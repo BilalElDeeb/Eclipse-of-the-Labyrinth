@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439a030ad4965f54c8d7d1d4c38d6b74, type: 3}
+  m_Name: Machine Gun Bullet
+  m_EditorClassIdentifier: 
+  itemName: Machine Gun Bullet
+  itemDescription: FAST PEW PEW
+  itemImage: {fileID: 210736301, guid: b631ed305dfd43c488e0f8edf5c829bc, type: 3}
+  itemScale: 1
+  speed: 7
+  damage: 1
+  bulletMovementBehaviour: {fileID: 11400000, guid: b3e4ce0a88ac66d4f88bbea760dc1284, type: 2}
+  bulletImpactBehaviour: {fileID: 11400000, guid: 3fff438a90b2c884c904cb8693bd43c9, type: 2}
