@@ -20,6 +20,7 @@ public class BulletController : MonoBehaviour
     void FixedUpdate()
     {
         bulletItem.bulletMovementBehaviour.BulletMove(this, this.bulletDirection);
+        
     }
 
     public void initializeBullet(BulletItem bulletItem, Vector3 bulletDirection, bool playerBullet)

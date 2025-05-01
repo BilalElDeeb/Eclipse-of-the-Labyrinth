@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="" />
+    <list default="true" id="1f5ff1c4-e505-4336-9f67-2544fd86fe70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse-of-the-Labyrinth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory Prefabs/Inventory Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory Prefabs/Inventory Slot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet Scripts/Bullet Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet Scripts/Bullet Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory Scripts/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Weapons/Weapon Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Items/Weapons/Weapon Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/Weapon Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/Weapon Controller.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -13,27 +13,33 @@ public class WeaponController : MonoBehaviour
     public float attackCooldown;
     public GameObject bulletPrefab;
 
-    private void Awake()
-    {
-        initialize(weapon);
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        initialize(weapon);
+    }
+    
+    public void initialize(WeaponItem weaponItem)
+    {
+        if (currentMagazine > 0)
+        {
+            Inventory.instance.AddItem(new InventorySlot()
+            {
+                item = weapon.bulletItem,
+                amount = currentMagazine
+            });
+        }
+        
+        this.weapon = weaponItem;
+        this.GetComponent<SpriteRenderer>().sprite = weapon.itemImage;
+        this.transform.localScale = new Vector3(weapon.itemScale, weapon.itemScale, 1);
+        
         currentMagazine = Mathf.Min(weapon.maxMagazineSize, Inventory.instance.CountItem(weapon.bulletItem));
         Inventory.instance.RemoveItem(new InventorySlot
         {
             item = weapon.bulletItem,
             amount = currentMagazine
         });
-    }
-    
-    void initialize(WeaponItem weaponItem)
-    {
-        this.weapon = weaponItem;
-        this.GetComponent<SpriteRenderer>().sprite = weapon.itemImage;
-        this.transform.localScale = new Vector3(weapon.itemScale, weapon.itemScale, 1);
     }
 
     Touch? getValidTouch()

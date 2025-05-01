@@ -14,6 +14,15 @@ public class Inventory : MonoBehaviour
     public List<InventorySlot> inventory = new List<InventorySlot>();
     public int inventorySize = 20;
 
+
+    private void Start()
+    {
+        if (OnInventoryChangedCallback != null)
+        {
+            OnInventoryChangedCallback();
+        }
+    }
+
     public bool AddItem(InventorySlot inventorySlot)
     {
         try
